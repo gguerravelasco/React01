@@ -19,7 +19,9 @@ export function Greeting({ title, name = "Persona" }) {
   console.log(title, name);
   return (
     <div>
-      <h1>{title}, dice {name}</h1>
+      <h1>
+        {title}, dice {name}
+      </h1>
       <p>lorem 123</p>
     </div>
   );
@@ -45,6 +47,35 @@ export function Greeting4() {
   );
 }
 
-export function UserCard(){
-  return <h1>User Card</h1>
+//usamos un unicode emoticons de dolar, es omo un icono
+//y aquí usamos props, el argumento
+/*export function UserCard(props) {
+  console.log(props);
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <p>💵{props.amount}</p>
+      <p>{props.married ? "married" : "single"}</p>
+      <ul>
+        <li>City: {props.address.city}</li>
+        <li>Street: {props.address.street}</li>
+      </ul>
+    </div>
+  );
+}*/
+
+//Aqui usamos los parametros individuales, ya no directamente con props como nombre de argumento
+export function UserCard({name, amount, married, address, greet}) {  
+  console.log(name,amount,married,address,greet)
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>💵{amount}</p>
+      <p>{married ? "married" : "single"}</p>
+      <ul>
+        <li>City: {address.city}</li>
+        <li>Street: {address.street}</li>
+      </ul>
+    </div>
+  );
 }

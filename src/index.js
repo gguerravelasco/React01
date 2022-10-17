@@ -147,7 +147,7 @@ root.render(
   </>
 );
 */
-
+//Aqui usamos el mismo componente (UserCard), al cual le usamos 2 veces con diferentes parámetros de datos
 root.render(
   <>
     <UserCard
@@ -156,6 +156,20 @@ root.render(
       married={true}
       points={[50, 22.3, 45, 38.9]}
       address={{ street: "123 Main Street", city: "New York" }}
+      greet={function () {
+        alert("Hello");
+      }}
+    />
+
+    <UserCard
+      name="Ernesto Velasco"
+      amount={1000}
+      married={false}
+      points={[500, 20]}
+      address={{
+        street: "Av. Patria 123",
+        city: "Quito",
+      }}
     />
   </>
 );
