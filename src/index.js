@@ -4,6 +4,9 @@ import ReactDom from "react-dom/client";
 import { UserCard } from "./Greeting";
 //import FuncionesAnidadas, { NavBar } from "./FuncionesAnidadas"; //se importa un único componente, arriba entre llaves se accede a más componentes si fuera el caso
 //import { Greeting2, Greeting3 } from "./Greeting2";
+import { Button } from "./Button";
+import { TaskCard } from "./Task"; //El componente y el archivo JS no se llaman igual, se mantiene que los 2 empiecen en mayuscula
+import { Saludar } from "./Saludar";
 
 //una forma, con la creacion de una variable
 //const rootElement = document.getElementById('root')
@@ -148,6 +151,7 @@ root.render(
 );
 */
 //Aqui usamos el mismo componente (UserCard), al cual le usamos 2 veces con diferentes parámetros de datos
+/*
 root.render(
   <>
     <UserCard
@@ -171,5 +175,48 @@ root.render(
         city: "Quito",
       }}
     />
+  </>
+);
+*/
+
+//en JSX se comenta englobando al componente entre llaves, y dentro de eso usamos los comentarios para JS
+//Uso o funcionamiento de Prop-Types
+//{/*HelloMundo*/}  asi se comenta dentro de html y JSX
+//{/*<Button text={{text: "hola"}}/>*/} {/*esto da un error, se espera un string, pero pasamos un objeto*/}
+//{/*<Button />*/} {/*no pasamos nada, para eso marcamos como requerido*/}
+/*
+root.render(
+  <>
+    <Button text="Click me" />
+    <Button text="Pay"/>
+    <Button text="Go to"/>    
+    <Button text=""/>
+    <Button text="Hola" name="Adam"/>
+  </>
+);
+*/
+
+/*
+root.render(
+  <>
+    <TaskCard ready={false} />
+  </>
+);
+*/
+
+//Aqui hacemos uso de un componente creado como clase, es otra forma, pero para este tipo de componentes
+//se escribe más código, entonces creo que lo mejor es hacer uso de componentes creados como funciones
+/*
+root.render(
+  <>
+    <Saludar />
+  </>
+);
+*/
+
+//vemos manejadores de eventos (event handler)
+root.render(
+  <>
+    <Button text="Saludar" />
   </>
 );
